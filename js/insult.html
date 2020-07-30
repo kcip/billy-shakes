@@ -1,0 +1,98 @@
+<body>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+
+<style>
+  .wrapper {
+  padding: 50px 20px 20px;
+  width: 40%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font: 400 2.4rem Helvetica Neue;
+  margin: 0 0 40px;
+}
+
+h2 {
+  font: 300 3.4rem Helvetica Neue;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .05em;
+  padding: 20px 0 0;
+}
+
+h3 {
+  text-align: center;
+  font: 300 1.6rem Helvetica Neue;
+  margin: 0 0 50px;
+}
+
+button {
+  font: 400 1.8rem Helvetica Neue;
+  display: block;
+  text-align: center;
+  border-radius: 0;
+  border: 4px solid #111;
+  background: transparent;
+  padding: 20px 40px;
+  margin: 0 auto;
+  outline: none;
+}
+
+@media(max-width:740px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 1.4rem
+  }
+}
+</style>
+  <header>
+    <section class='wrapper'>
+      
+      <button id="generate-name">Generate</button>
+      <h2>
+          <span id='color-name'>word</span>
+          <span>&amp;</span> 
+          <span id='sur-name'>Wade</span>
+      </h2>
+      
+    </section>
+  </header>
+  <script>
+
+    var createName = function(colorName, surName) {
+
+var colorList = [
+'sage', 'poppy', 'rust', 'driftwood', 'ebony', 'clementine', 'coral', 'olive', 'orchid', 'juniper', 'clover', 'parsley', 'peacock', 'fawn', 'pewter', 'lilac', 'rosemary', 'grove', 'iris', 'jade', 'marigold', 'ivory', 'persimmon', 'cactus', 'prune', 'amethyst', 'stone', 'plum', 'tulip', 'twilight', 'dandelion', 'spruce', 'lily', 'twig', 'slate', 'tusk', 'canary', 'flamingo', 'artichoke', 'copper', 'ruby', 'clove', 'leaf', 'fern', 'willow', 'raven', 'vine', 'cypress', 'saffron', 'flax', 'thistle'];
+
+var surnameList = [
+'dixon', 'blackburn', 'ambrose', 'windsor', 'wakefield', 'lockwood', 'saville', 'rutherford', 'kingsley', 'drake', 'woodbury', 'avery', 'moss', 'dixon', 'hunter', 'reed', 'dunhill', 'sparrow', 'frost', 'whitfield', 'lockwood', 'barlow', 'york', 'lamb', 'harlow', 'birch', 'page', 'broome', 'fox', 'churchill', 'sexton', 'james', 'frost', 'cross', 'burke', 'snow', 'mason', 'chatfield', 'greene', 'crowe', 'rowe', 'astor', 'sutton', 'young', 'noble', 'wade', 'banks', 'ash'];
+
+var randomColor = colorList[Math.floor(Math.random() * colorList.length)];
+$(colorName).html(randomColor);
+
+var randomSurname = surnameList[Math.floor(Math.random() * surnameList.length)];
+$(surName).html(randomSurname);
+};
+
+$('#generate-name').on('click', function() {createName('#color-name', '#sur-name');
+});
+
+
+  </script>
+</body>
